@@ -1,13 +1,20 @@
 extends Node2D
 
+@export var debug = false
+
 signal cells_selected(cells)
 
+var cells = []
 var selected_cells = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	cells = [$A, $B, $C, $D, $E]
+	for cell in cells:
+		cell.debug = debug
 
+func get_cells():
+	return cells.duplicate()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

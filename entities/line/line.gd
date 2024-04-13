@@ -16,9 +16,9 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				is_drawing = true
-				points = [event.position]
+				points = [get_local_mouse_position()]
 			else:
 				is_drawing = false
 	elif event is InputEventMouseMotion:
 		if is_drawing:
-			add_point(event.position)
+			add_point(get_local_mouse_position())
