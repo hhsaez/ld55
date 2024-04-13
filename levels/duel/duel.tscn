@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://hiakc5mdr7wg"]
+[gd_scene load_steps=4 format=3 uid="uid://hiakc5mdr7wg"]
 
 [ext_resource type="Script" path="res://levels/duel/duel.gd" id="1_8s8c5"]
 [ext_resource type="PackedScene" uid="uid://dkioyxu7qut5" path="res://entities/symbol/symbol.tscn" id="2_8g875"]
+[ext_resource type="PackedScene" uid="uid://biexqyvc35jtn" path="res://entities/park_background/park_background.tscn" id="3_vnw5s"]
 
 [node name="Duel" type="Node2D"]
 script = ExtResource("1_8s8c5")
 symbol_scene = ExtResource("2_8g875")
+
+[node name="ParkBackground" parent="." instance=ExtResource("3_vnw5s")]
