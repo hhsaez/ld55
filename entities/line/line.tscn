@@ -5,6 +5,5 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Line" type="Line2D" parent="."]
-points = PackedVector2Array(3, 0, 18, 17, 41, 38, 68, 56, 88, 73, 106, 89, 38, 85, -1, 52, 90, 17, 105, 56)
 default_color = Color(0.866667, 0, 0, 1)
 script = ExtResource("1_ukvop")
