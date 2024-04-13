@@ -11,4 +11,10 @@ script = ExtResource("1_8s8c5")
 
 [node name="Node2D" parent="." instance=ExtResource("3_0pnma")]
 
+[node name="DebugOutput" type="Label" parent="."]
+offset_left = 381.0
+offset_right = 1151.0
+offset_bottom = 649.0
+text = "Waiting for pattern..."
+
 [connection signal="cells_selected" from="Grid" to="." method="_on_grid_cells_selected"]

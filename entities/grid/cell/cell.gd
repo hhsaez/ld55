@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var debug = false
+
 signal hovered(which: Node2D)
 
 var is_mouse_hovering = false
@@ -21,7 +23,7 @@ func _ready():
 	color_rect.visible = false
 	
 func _process(delta):
-	color_rect.visible = is_mouse_hovering
+	color_rect.visible = debug and is_mouse_hovering
 	if is_mouse_hovering and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		hovered.emit(self)
 
