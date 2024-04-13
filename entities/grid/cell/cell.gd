@@ -2,10 +2,8 @@ extends Node2D
 
 signal hovered(which: Node2D)
 
-var last_mouse_position = Vector2()
-var is_mouse_over = false
+var is_mouse_hovering = false
 
-@onready var timer = $Timer
 @onready var color_rect = $ColorRect
 
 # Called when the node enters the scene tree for the first time.
@@ -14,37 +12,21 @@ func _ready():
 	var shape = collision_shape.shape
 	if shape is RectangleShape2D:
 		color_rect.size = shape.size
+	elif shape is CircleShape2D:
+		color_rect.size = Vector2(2 * shape.radius, 2 * shape.radius)
 	var r = randf()
 	var g = randf()
 	var b = randf()
 	color_rect.color = Color(r, g, b, 1)
 	color_rect.visible = false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
-func _input(event):
-	if event is InputEventMouseMotion:
-		last_mouse_position = event.position
-		# Reset the timer whenever the mouse moves
-		timer.stop()
-		timer.start()
-		color_rect.visible = false
+func _process(delta):
+	color_rect.visible = is_mouse_hovering
+	if is_mouse_hovering and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		hovered.emit(self)
 
 func _on_area_2d_mouse_entered():
-	is_mouse_over = true
-	last_mouse_position = get_viewport().get_mouse_position()
-	timer.start()
+	is_mouse_hovering = true
 
 func _on_area_2d_mouse_exited():
-	is_mouse_over = false
-	timer.stop()
-
-func _on_timer_timeout():
-	if is_mouse_over && last_mouse_position == get_viewport().get_mouse_position():
-		color_rect.visible = true
-		hovered.emit(self)
-		
-#	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-#		hovered.emit(self)
+	is_mouse_hovering = false
