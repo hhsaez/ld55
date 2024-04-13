@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fnpuqakk8jqd"]
+
+[ext_resource type="Script" path="res://autoloads/enemy_state/enemy_state.gd" id="1_efint"]
+
+[node name="EnemyState" type="Node"]
+script = ExtResource("1_efint")

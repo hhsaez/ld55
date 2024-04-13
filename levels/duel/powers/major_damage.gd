@@ -8,7 +8,8 @@ func execute(is_positive: bool):
 		
 func _positive_outcome():
 	print("Cast a burst that deals immediate major damage to the opponent.")
+	PlayerState.do_damage(4)
 	
 func _negative_outcome():
 	print("Suffer immediate moderate damage yourself.")
-	
+	PlayerState.take_damage(2)

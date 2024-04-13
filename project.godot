@@ -16,6 +16,11 @@ run/main_scene="res://levels/duel/duel.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerState="*res://autoloads/player_state/player_state.tscn"
+EnemyState="*res://autoloads/enemy_state/enemy_state.tscn"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

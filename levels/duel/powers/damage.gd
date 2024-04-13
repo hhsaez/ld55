@@ -8,7 +8,9 @@ func execute(is_positive: bool):
 		
 func _positive_outcome():
 	print("Cast a bolt that deals moderate damage to the opponent.")
+	PlayerState.do_damage(2)
 	
 func _negative_outcome():
 	print("Accidentally shock yourself, dealing slight damage.")
+	PlayerState.take_damage(1)
 	

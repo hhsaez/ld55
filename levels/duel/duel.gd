@@ -12,7 +12,12 @@ var all_effects = {
 	"I": MajorHeal.new(),
 }
 
+func _ready():
+	PlayerState.reset()
+	EnemyState.reset()
+
 func _on_grid_cells_selected(cells):
+	print("---- BEGIN ----")
 	print("Pattern: ", ",".join(cells))
 	
 	var is_positive = true
@@ -23,3 +28,8 @@ func _on_grid_cells_selected(cells):
 		var effect = all_effects[cell_name]
 		effect.execute(is_positive)
 		is_positive = not is_positive
+	
+	PlayerState.dump_debug_info()
+	EnemyState.dump_debug_info()
+		
+	print("---- END ----")

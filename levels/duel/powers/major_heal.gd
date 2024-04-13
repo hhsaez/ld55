@@ -8,7 +8,9 @@ func execute(is_positive: bool):
 		
 func _positive_outcome():
 	print("Heal yourself for a moderate amount.")
+	PlayerState.heal(4)
 	
 func _negative_outcome():
 	print("Accidentally heal the opponent for a smaller amount.")
+	EnemyState.heal(2)
 	
