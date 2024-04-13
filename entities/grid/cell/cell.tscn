@@ -19,7 +19,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.001
 one_shot = true
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

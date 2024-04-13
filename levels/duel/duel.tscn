@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://hiakc5mdr7wg"]
+[gd_scene load_steps=3 format=3 uid="uid://hiakc5mdr7wg"]
 
+[ext_resource type="Script" path="res://levels/duel/duel.gd" id="1_8s8c5"]
 [ext_resource type="PackedScene" uid="uid://bumds1yeglelv" path="res://entities/grid/grid.tscn" id="1_es3kk"]
 
 [node name="Duel" type="Node2D"]
+script = ExtResource("1_8s8c5")
 
 [node name="Grid" parent="." instance=ExtResource("1_es3kk")]
+
+[connection signal="cells_selected" from="Grid" to="." method="_on_grid_cells_selected"]
