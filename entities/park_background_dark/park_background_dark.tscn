@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://6vkleqo5b5ur"]
+
+[ext_resource type="Texture2D" uid="uid://c5hvibll73bog" path="res://entities/park_background/Ld55_background.png" id="1_v74ms"]
+
+[node name="ParkBackground" type="Node2D"]
+
+[node name="Ld55Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_v74ms")
+offset = Vector2(960, 540)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.321569, 0.392157, 0.443137, 0.388235)
